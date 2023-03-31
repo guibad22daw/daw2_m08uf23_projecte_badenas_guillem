@@ -18,7 +18,7 @@
 	   try{
 	       $ldap->bind($dn,$ctsnya);
            session_start();
-           $_SESSION['usuari'] = $_POST['usuari'];
+           $_SESSION['usuari'] = $_POST['adm'];
            $_SESSION['expira'] = time() + 216000;
 	       header("location: menu.php");
 	   } catch (Exception $e){
