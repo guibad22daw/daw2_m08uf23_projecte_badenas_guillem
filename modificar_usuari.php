@@ -4,6 +4,7 @@
     use Laminas\Ldap\Ldap;
 
     session_start();
+    $modificat = 0;
     if (!isset($_SESSION['usuari'])) {
         header("Location: errors/error_acces.php");
     } else if (!isset($_SESSION['expira']) || (time() - $_SESSION['expira'] >= 0)) {
@@ -31,12 +32,15 @@
             $ldap->bind();
             $entrada = $ldap->getEntry($dn);
             if ($entrada) {
-                Attribute::setAttribute($entrada, $atribut, $nou_contingut);
-                $ldap->update($dn, $entrada);
-                $modificat = 1;
+                try {
+                    Attribute::setAttribute($entrada, $atribut, $nou_contingut);
+                    $ldap->update($dn, $entrada);
+                    $modificat = 1;
+                } catch(Exception $err) {
+                    $modificat = 2;
+                } 
             } else {
-                $modificat = 2;
-
+                $modificat = 3;
             }
         }
     }
@@ -72,16 +76,18 @@
         <input type="radio" name="atribut" value="description"> Descripcio<br>
         <h3>Nou contingut: </h3>
         <input type="text" id="nou_contingut" name="nou_contingut" required>
-
+        <br/><br/>
         <button type="submit">Envia</button>
     </form>
     <br />
     <a href="menu.php">Tornar al menú</a>
     <?php
         if ($modificat == 1) {
-            echo "<script type='text/javascript'>alert('Atribut modificat');</script>";
+            echo "<script type='text/javascript'>alert('Usuari modificat correctament.');</script>";
         } else if ($modificat == 2) {
-            echo "<script type='text/javascript'>alert('Aquesta entrada no existeix');</script>";
+            echo "<script type='text/javascript'>alert('Error modificant usuari.');</script>";
+        } else if ($modificat == 3) {
+            echo "<script type='text/javascript'>alert('Error modificant usuari. Comprova que l\'UID i la UO existeixen.');</script>";
         }
     ?>
 </body>

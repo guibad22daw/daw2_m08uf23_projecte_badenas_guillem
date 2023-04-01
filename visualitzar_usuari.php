@@ -22,16 +22,8 @@ if (!isset($_SESSION['usuari'])) {
         $ldap->bind();
         $entrada = 'uid=' . $_GET['usr'] . ',ou=' . $_GET['ou'] . ',dc=fjeclot,dc=net';
         $usuari = $ldap->getEntry($entrada);
-        echo $usuari;
-        if ($usuari) {
-            echo "<b><u>" . $usuari["dn"] . "</b></u><br>";
-            foreach ($usuari as $atribut => $dada) {
-                if ($atribut != "dn")
-                    echo $atribut . ": " . $dada[0] . '<br>';
-            }
-        } else {
-            echo "<b>Aquest usuari no existeix. Comprova bé les dades.</b><br><br>";
-        }
+        if($usuari) $visualitza = 1;
+        else $visualitza = 2;
     }
 }
 ?>
@@ -46,12 +38,24 @@ if (!isset($_SESSION['usuari'])) {
 <body>
     <h2>Formulari de selecció d'usuari</h2>
     <form action="visualitzar_usuari.php" method="GET">
-        Unitat organitzativa: <input type="text" name="ou"><br>
-        Usuari: <input type="text" name="usr"><br>
+        Unitat organitzativa: <input type="text" name="ou"><br/><br/>
+        Usuari: <input type="text" name="usr"><br><br/>
         <input type="submit" />
         <input type="reset" />
     </form>
     <br />
+    <?php
+        if ($$visualitza == 1) {
+            echo "<b><u>" . $usuari["dn"] . "</b></u><br>";
+            foreach ($usuari as $atribut => $dada) {
+                if ($atribut != "dn")
+                    echo $atribut . ": " . $dada[0] . '<br>';
+            }
+        } else if ($visualitza == 2) {
+            echo "<script type='text/javascript'>alert('Aquest usuari no existeix. Comprova bé les dades.');</script>";
+        }
+    ?>
+    <br/>
     <a href="menu.php">Tornar al menú</a>
 </body>
 
