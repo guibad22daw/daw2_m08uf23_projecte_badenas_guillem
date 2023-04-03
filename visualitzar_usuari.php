@@ -43,7 +43,7 @@ if (!isset($_SESSION['usuari'])) {
 <body>
     <h2 class="titol">Visualitzar dades d'usuari</h2>
     <div class="form input-group">
-        <h4 for="basic-url">Introdueix les dades necessàries</h4><br />
+        <h4>Introdueix les dades necessàries</h4><br />
         <form action="visualitzar_usuari.php" method="GET">
             Unitat organitzativa: <input type="text" name="ou" class="form-control"
                 placeholder="Unitat organitzativa"><br />

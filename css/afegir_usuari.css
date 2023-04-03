@@ -28,7 +28,7 @@ body {
     margin-bottom: 1.5%;
     color: white;
     text-shadow: 2px 2px 6px black;
-    font-weight: 600;
+    font-weight: bold;
     display: block;
     position: relative;
     text-align: center;
@@ -36,24 +36,12 @@ body {
     z-index: 1;
 }
 
-.table {
-    width: 80%;
-    margin: 0 auto;
-    background-color: white;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-}
-
-.table td {
-    padding: 20px;
-}
-
 .form {
-    width: 500px;
+    width: 800px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 5px black;
-    padding: 10px;
+    padding: 50px 50px 20px 50px;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
@@ -62,19 +50,30 @@ body {
 }
 
 .form h4 {
-    margin: 1rem 0 1.5rem 0;
+    margin: -15px 0 10px 0;
     font-weight: bold;
 }
 
 .form input {
     border-radius: 20px;
-    padding: 10px;
-    width: 300px;
+    padding: 10px 15px 10px 15px;
     margin-top: 5px;
+}
+
+.form textarea {
+    height: 70px;
+    resize: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.form .form-label {
+    margin-top: 15px;
 }
 
 .btn {
     width: 100%;
+    margin-top: 30px;
     border-radius: 25px;
     padding: 10px 15px 10px 15px;
     margin-bottom: 10px;
