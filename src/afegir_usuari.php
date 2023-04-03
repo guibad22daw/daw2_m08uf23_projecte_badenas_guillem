@@ -109,10 +109,10 @@ if (!isset($_SESSION['usuari'])) {
                 <label class="form-label" for="adressa">Adreça: </label> <input class="form-control" type="text" id="adressa" name="adressa" placeholder="C/Exemple 33" required> 
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="mobil">Mobil: </label> <input class="form-control" type="number" id="mobil" name="mobil" placeholder="6XXXXXXXX" required> 
+                <label class="form-label" for="mobil">Mòbil: </label> <input class="form-control" type="number" id="mobil" name="mobil" placeholder="6XXXXXXXX" required> 
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="telefon">Telefon: </label> <input class="form-control" type="number" id="telefon" name="telefon" placeholder="9XXXXXXXX" required>
+                <label class="form-label" for="telefon">Telèfon: </label> <input class="form-control" type="number" id="telefon" name="telefon" placeholder="9XXXXXXXX" required>
             </div>
             <div class="col-12">
                 <label class="form-label" for="titol">Títol: </label> <input class="form-control" type="text" id="titol" name="titol" placeholder="p.e. Informàtic" required>

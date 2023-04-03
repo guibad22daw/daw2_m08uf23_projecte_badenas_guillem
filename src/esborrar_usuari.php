@@ -52,7 +52,7 @@
         <form action="esborrar_usuari.php" method="POST">
             <label for="uid">Nom de l'usuari (UID): </label> <input type="text" id="uid" name="uid" class="form-control" placeholder="usuari" required> <br />
             <label for="unorg">Unitat Organitzativa: </label> <input type="text" id="unorg" name="unorg" class="form-control" placeholder="exemples" required>
-            <br /><br />
+            <br />
             <div style="display: flex; justify-content: center">
                 <button class="btn btn-primary">Esborrar</button>
             </div>

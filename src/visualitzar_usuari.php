@@ -45,8 +45,8 @@ if (!isset($_SESSION['usuari'])) {
     <div class="form input-group">
         <h4>Introdueix les dades necessàries</h4><br />
         <form action="visualitzar_usuari.php" method="GET">
-            Unitat organitzativa: <input type="text" name="ou" class="form-control" placeholder="exemples"><br />
-            Nom de l'usuari: <input type="text" name="usr" class="form-control" placeholder="usuari"><br>
+            Nom d'usuari (UID): <input type="text" name="usr" class="form-control" placeholder="usuari"><br>
+            Unitat Organitzativa: <input type="text" name="ou" class="form-control" placeholder="exemples"><br />
             <div style="display: flex; justify-content: center">
                 <button class="btn btn-primary">Consultar</button>
             </div>
@@ -55,7 +55,7 @@ if (!isset($_SESSION['usuari'])) {
     <br /><br />
     <?php
     if ($visualitza == 1) {
-        echo '<table class="table table-striped table-bordered"><thead><tr><th scope="col">Nom complet</th><th scope="col">Descripció</th><th scope="col">GID</th><th scope="col">Nom de pila</th><th scope="col">Directori personal</th><th scope="col">Shell</th><th scope="col">Núm. de mòbil</th><th scope="col">Object Class</th><th scope="col">Adreça</th><th scope="col">Cognom</th><th scope="col">Núm de telefon</th><th scope="col">Títol</th><th scope="col">UID</th><th scope="col">Número de UID</th></tr></thead><tbody><tr>';
+        echo '<table class="table table-striped table-bordered"><thead><tr><th scope="col">Nom complet</th><th scope="col">Descripció</th><th scope="col">GID</th><th scope="col">Nom de pila</th><th scope="col">Directori personal</th><th scope="col">Shell</th><th scope="col">Núm. de mòbil</th><th scope="col">Object Class</th><th scope="col">Adreça</th><th scope="col">Cognom</th><th scope="col">Núm de telèfon</th><th scope="col">Títol</th><th scope="col">UID</th><th scope="col">Número de UID</th></tr></thead><tbody><tr>';
         foreach ($usuari as $atribut => $dada) {
             if ($atribut != "dn")
                 echo "<td>$dada[0]</td>";

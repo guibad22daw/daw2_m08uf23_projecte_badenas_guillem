@@ -52,7 +52,7 @@ if (!isset($_SESSION['usuari'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modificar usuari | Gestió LDAP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/modificar_usuari.css">
 </head>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['usuari'])) {
                 <label for="unorg">Unitat Organitzativa: </label> <input type="text" class="form-control" placeholder="exemples" id="unorg"
                     name="unorg" required>
             </div>
-            <label style="margin-top: 15px"> Atribut a modificar: </label>
+            <label style="margin-top: 20px"> Atribut a modificar: </label>
             <div class="col-md-6 form-check" style="margin-top: 8px">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" id="atribut1" name="atribut" value="uidNumber" checked> 
@@ -97,7 +97,7 @@ if (!isset($_SESSION['usuari'])) {
             <div class="col-md-6 form-check" style="margin-top: 8px">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" id="atribut7" name="atribut" value="givenName"> 
-                    <label class="form-check-label" for="atribut7">Nom</label>
+                    <label class="form-check-label" for="atribut7">Nom de pila</label>
                 </div>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" id="atribut8" name="atribut" value="postalAddress"> 
@@ -121,7 +121,7 @@ if (!isset($_SESSION['usuari'])) {
                 </div>
             </div>
             <div class="col-12">
-                <label for="nou_contingut" style="margin-top: 10px;">Nou contingut:</label>
+                <label for="nou_contingut" style="margin-top: 15px;">Nou contingut:</label>
                 <input type="text" id="nou_contingut" name="nou_contingut" class="form-control" placeholder="Nou contingut..." required>
                 <div style="display: flex; justify-content: center">
                     <button class="btn btn-primary">Modificar usuari</button>
