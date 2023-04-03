@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use Laminas\Ldap\Attribute;
 use Laminas\Ldap\Ldap;
 
@@ -125,7 +125,7 @@ if (!isset($_SESSION['usuari'])) {
         </form>
     </div>
     <div style="display: flex; justify-content: center">
-        <a class="btn btn-danger" style="width: 10%" href="menu.php">Tornar al menú principal</a>
+        <a class="btn btn-danger" style="width: 250px" href="menu.php">Tornar al menú principal</a>
     </div>
     <br/>
     <?php

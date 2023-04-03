@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use Laminas\Ldap\Ldap;
 
 session_start();
@@ -33,7 +33,7 @@ if (!isset($_SESSION['usuari'])) {
 
 <head>
     <title>
-        MOSTRANT DADES D'USUARIS DE LA BASE DE DADES LDAP
+        Visualitzar dades d'usuari | Gestió LDAP
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -45,8 +45,7 @@ if (!isset($_SESSION['usuari'])) {
     <div class="form input-group">
         <h4>Introdueix les dades necessàries</h4><br />
         <form action="visualitzar_usuari.php" method="GET">
-            Unitat organitzativa: <input type="text" name="ou" class="form-control"
-                placeholder="Unitat organitzativa"><br />
+            Unitat organitzativa: <input type="text" name="ou" class="form-control" placeholder="exemples"><br />
             Nom de l'usuari: <input type="text" name="usr" class="form-control" placeholder="usuari"><br>
             <div style="display: flex; justify-content: center">
                 <button class="btn btn-primary">Consultar</button>
@@ -67,7 +66,7 @@ if (!isset($_SESSION['usuari'])) {
     }
     ?>
     <div style="display: flex; justify-content: center">
-        <a class="btn btn-danger" style="width: 10%" href="menu.php">Tornar al menú principal</a>
+        <a class="btn btn-danger" style="width: 250px" href="menu.php">Tornar al menú principal</a>
     </div>
 </body>
 

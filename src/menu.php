@@ -5,6 +5,11 @@
 		header("Location: errors/error_acces.php");
 	} else if (!isset($_SESSION['expira']) || (time() - $_SESSION['expira'] >= 0)) {
 		header("Location: errors/logout_expira_sessio.php");
+	} else if (isset($_POST['logout'])) {
+		$cookie_sessio = session_get_cookie_params();
+		setcookie("PHPSESSID", "", time() - 3600, $cookie_sessio['path'], $cookie_sessio['domain'], $cookie_sessio['secure'], $cookie_sessio['httponly']);
+		session_destroy();
+		header("Location: index.html");
 	}
 ?>
 <html>
@@ -57,9 +62,11 @@
 		</div>
 	</div>
 	<br><br>
-	<div class="boto">
-		<a href="logout.php" class="btn btn-danger">Finalitza la sessió</a>
-	</div>
+	<form action="menu.php" method="POST">
+		<div class="boto"> 
+			<button type="submit" class="btn btn-danger" name="logout">Finalitza la sessió</button></a>
+		</div>
+	</form>
 	<br>
 </body>
 

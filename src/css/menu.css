@@ -82,3 +82,7 @@ img {
     height: auto;
     font-size: 17.5px;
 }
+
+.boto .btn {
+    padding: 10px 30px 10px 30px!important;
+}
