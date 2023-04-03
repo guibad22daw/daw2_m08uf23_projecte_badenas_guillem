@@ -32,7 +32,7 @@ if ($_POST['cts'] && $_POST['adm']) {
 	<title>
 		Login
 	</title>
-	<link rel="stylesheet" href="stylesheets/login.css">
+	<link rel="stylesheet" href="css/login.css">
 </head>
 
 <div class="login">
