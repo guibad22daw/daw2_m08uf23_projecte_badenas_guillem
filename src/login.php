@@ -2,7 +2,7 @@
 require '../vendor/autoload.php';
 use Laminas\Ldap\Ldap;
 
-ini_set('display_errors', 0);
+error_reporting(0);
 $logat = 0;
 if ($_POST['cts'] && $_POST['adm']) {
 	$opcions = [

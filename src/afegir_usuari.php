@@ -3,6 +3,7 @@ require '../vendor/autoload.php';
 use Laminas\Ldap\Attribute;
 use Laminas\Ldap\Ldap;
 
+error_reporting(0);
 session_start();
 if (!isset($_SESSION['usuari'])) {
     header("Location: errors/error_acces.php");

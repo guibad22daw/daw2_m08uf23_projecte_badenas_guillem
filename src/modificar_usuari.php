@@ -3,6 +3,7 @@ require '../vendor/autoload.php';
 use Laminas\Ldap\Attribute;
 use Laminas\Ldap\Ldap;
 
+error_reporting(0);
 session_start();
 $modificat = 0;
 if (!isset($_SESSION['usuari'])) {
