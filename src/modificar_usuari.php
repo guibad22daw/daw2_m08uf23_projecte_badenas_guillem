@@ -64,7 +64,7 @@ if (!isset($_SESSION['usuari'])) {
         <h4 for="basic-url">Modificació d'usuari</h4><br />
         <form action="modificar_usuari.php" method="POST" class="row g-7">
             <div class="col-12">
-                <label for="uid">UID: </label> <input type="text" class="form-control" id="uid" name="uid" placeholder="usuari1" required>
+                <label for="uid">UID: </label> <input type="text" class="form-control" id="uid" name="uid" placeholder="usuari" required>
                 <label for="unorg">Unitat Organitzativa: </label> <input type="text" class="form-control" placeholder="exemples" id="unorg"
                     name="unorg" required>
             </div>
