@@ -97,7 +97,7 @@ if (!isset($_SESSION['usuari'])) {
             </div>
             <div class="col-12">
                 <label class="form-label" for="dir_pers">Directori personal: </label> <input class="form-control" type="text" id="dir_pers" name="dir_pers" placeholder="/home/exemple1" required>
-                <label class="form-label" for="sh">Shell: </label> <input class="form-control" type="text" id="sh" name="sh" placeholder="/bin/sh" required>
+                <label class="form-label" for="sh">Shell: </label> <input class="form-control" type="text" id="sh" name="sh" placeholder="/bin/bash" required>
                 <label class="form-label" for="cn">Nom complet: </label> <input class="form-control" type="text" id="cn" name="cn" placeholder="John Doe" required>
             </div>
             <div class="col-md-6">
