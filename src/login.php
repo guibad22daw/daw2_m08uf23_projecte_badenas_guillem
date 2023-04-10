@@ -30,9 +30,7 @@ if ($_POST['cts'] && $_POST['adm']) {
 <html>
 
 <head>
-	<title>
-		Login
-	</title>
+	<title>Login - Gestió LDAP</title>
 	<link rel="stylesheet" href="css/login.css">
 </head>
 
