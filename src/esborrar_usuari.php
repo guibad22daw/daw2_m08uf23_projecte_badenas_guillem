@@ -10,27 +10,29 @@
     } else if (!isset($_SESSION['expira']) || (time() - $_SESSION['expira'] >= 0)) {
         header("Location: errors/error_expira_sessio.php");
     } else {
-        if (isset($_POST['uid']) && isset($_POST['unorg'])) {
-            $uid = $_POST['uid'];
-            $unorg = $_POST['unorg'];
-            $dn = 'uid=' . $uid . ',ou=' . $unorg . ',dc=fjeclot,dc=net';
-            $opcions = [
-                'host' => 'zend-gubabe.fjeclot.net',
-                'username' => 'cn=admin,dc=fjeclot,dc=net',
-                'password' => 'fjeclot',
-                'bindRequiresDn' => true,
-                'accountDomainName' => 'fjeclot.net',
-                'baseDn' => 'dc=fjeclot,dc=net',
-            ];
-            $ldap = new Ldap($opcions);
-            $ldap->bind();
-            try {
-                $ldap->delete($dn);
-                $esborrat = 1;
-            } catch (Exception $e) {
-                $esborrat = 2;
-            }
-        }
+        if (($_SERVER['REQUEST_METHOD'] == "POST") && ($_POST['metode'] == "DELETE")) {
+            if (isset($_POST['uid']) && isset($_POST['unorg'])) {
+                $uid = $_POST['uid'];
+                $unorg = $_POST['unorg'];
+                $dn = 'uid=' . $uid . ',ou=' . $unorg . ',dc=fjeclot,dc=net';
+                $opcions = [
+                    'host' => 'zend-gubabe.fjeclot.net',
+                    'username' => 'cn=admin,dc=fjeclot,dc=net',
+                    'password' => 'fjeclot',
+                    'bindRequiresDn' => true,
+                    'accountDomainName' => 'fjeclot.net',
+                    'baseDn' => 'dc=fjeclot,dc=net',
+                ];
+                $ldap = new Ldap($opcions);
+                $ldap->bind();
+                try {
+                    $ldap->delete($dn);
+                    $esborrat = 1;
+                } catch (Exception $e) {
+                    $esborrat = 2;
+                }
+            } else echo "<script type='text/javascript'>alert('Mètode incorrecte.');</script>";
+        } 
     }
 ?>
 <!DOCTYPE html>
@@ -51,6 +53,7 @@
     <div class="form input-group">
         <h4>Esborrament d'un usuari</h4><br />
         <form action="esborrar_usuari.php" method="POST">
+            <input type="hidden" name="metode" value="DELETE" />
             <label for="uid">Nom de l'usuari (UID): </label> <input type="text" id="uid" name="uid" class="form-control" placeholder="usuari" required> <br />
             <label for="unorg">Unitat Organitzativa: </label> <input type="text" id="unorg" name="unorg" class="form-control" placeholder="exemples" required>
             <br />
